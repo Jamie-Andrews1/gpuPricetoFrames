@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Gpu Price to Performance</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Gpu Price To Performance Calculator</h1>
+      </div>
+      <h2>Gpu Comparison</h2>
+      <div class="section">
+        <div class="article1">
+          <h3>Gpu One</h3>
+          <form id="price1">
+            <input type="text" class="gpu1" placeholder="Gpu name..." />
+            <input
+              type="number"
+              class="fps1"
+              placeholder="Frames Per Second..."
+            />
+            <input
+              type="number"
+              class="cost1"
+              placeholder="Cost..."
+              step="0.01"
+            />
+            <button class="submit" value="submit" type="submit">Submit</button>
+          </form>
+        </div>
+        <div class="article2">
+          <h3>Gpu Two</h3>
+          <form id="price2">
+            <input type="text" class="gpu2" placeholder="Gpu name..." />
+            <input
+              type="number"
+              class="fps2"
+              placeholder="Frames Per Second..."
+            />
+            <input
+              type="number"
+              class="cost2"
+              placeholder="Cost..."
+              step="0.01"
+            />
+            <button class="submit" value="submit" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="result">
+        <div class="res1"></div>
+        <div class="res2"></div>
+      </div>
+      <div class="diffs"></div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

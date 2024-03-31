@@ -1,0 +1,142 @@
+:root {
+  --outline: #66bb6a solid 2px;
+  --font-color: #373d3f;
+}
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: unset;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    background-color: #f3f4f6;
+    color: var(--font-color);
+  }
+  .header {
+    text-align: center;
+    width: 100%;
+    background-color: blue;
+    color: white;
+  }
+  .success,
+  .error {
+    margin: 5px auto 15px auto;
+    width: fit-content;
+    border-radius: 5px;
+    padding: 5px 10px;
+    animation: wobble 0.5s ease-in-out;
+  }
+
+  @keyframes wobble {
+    0% {
+      transform: translateX(0%);
+    }
+    15% {
+      transform: translateX(-25%) rotate(-5deg);
+    }
+    30% {
+      transform: translateX(20%) rotate(3deg);
+    }
+    45% {
+      transform: translateX(-15%) rotate(-3deg);
+    }
+    60% {
+      transform: translateX(10%) rotate(2deg);
+    }
+    75% {
+      transform: translateX(-5%) rotate(-1deg);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  .success {
+    border: 2px solid green;
+  }
+  .error {
+    border: 2px solid red;
+  }
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+  img,
+  picture,
+  svg,
+  canvas {
+    display: block;
+    max-inline-size: 100%;
+    block-size: auto;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+  }
+  .section {
+    display: flex;
+    width: 50%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 1rem;
+  }
+  h3 {
+    text-align: center;
+  }
+  #price1 {
+    display: flex;
+    flex-direction: column;
+  }
+  #price2 {
+    display: flex;
+    flex-direction: column;
+  }
+  .result {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+  }
+  label {
+    font-size: 1.2rem;
+  }
+  form input {
+    margin-bottom: 1rem;
+  }
+  input:focus-visible {
+    outline: var(--outline);
+  }
+  button:focus {
+    outline: var(--outline);
+  }
+  .diffs {
+    margin: 0 1rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  @media (max-width: 920px) {
+    .container {
+      margin-bottom: 2rem;
+    }
+    .section {
+      justify-content: center;
+    }
+  }
+}
