@@ -12,6 +12,17 @@
         <h1>Gpu Price To Performance Calculator</h1>
       </div>
       <h2>Gpu Comparison</h2>
+      <button
+        id="tip-anchor"
+        popovertarget="tooltip-content"
+        data-trigger="hover"
+      >
+        information
+      </button>
+      <div popover anchor="tip-anchor" id="tooltip-content" class="tooltip">
+        Gather information online of two gpus for your chosen titles and compare
+        here!!
+      </div>
       <div class="section">
         <div class="article1">
           <h3>Gpu One</h3>
@@ -50,6 +61,9 @@
           </form>
         </div>
       </div>
+      <button class="clearStore" type="button" onClick="clearStore()">
+        Clear All
+      </button>
       <div class="result">
         <div class="res1"></div>
         <div class="res2"></div>

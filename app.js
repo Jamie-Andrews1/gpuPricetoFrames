@@ -86,11 +86,20 @@ class UI {
     const costPerc = greaterCost.cost / 100;
     const costing = lowerCost.cost / costPerc;
     costDiff = 100 - costing;
+
+    const frames =
+      fpsDiff === 0 ? "frames" : fpsDiff < 0 ? "less frames" : "more frames";
+
     elf.innerHTML = `
       <h4>Percent differences</h4>
-      <p>${greaterFps.name} has ${fpsDiff.toFixed(2)}% more frames than the ${lowerFps.name} and the ${greaterCost.name} costs ${costDiff.toFixed(2)}% more than ${lowerCost.name} </p>`;
+      <p>${greaterFps.name} has ${fpsDiff.toFixed(2)}% ${frames} than the ${lowerFps.name} and the ${greaterCost.name} costs ${costDiff.toFixed(2)}% more than ${lowerCost.name} </p>`;
 
     return diffs.appendChild(elf);
+  }
+  static clearUI() {
+    res1.textContent = "";
+    res2.textContent = "";
+    diffs.textContent = "";
   }
   static clearFields1() {
     document.querySelector(".gpu1").value = "";
@@ -163,4 +172,19 @@ document.querySelector("#price2").addEventListener("submit", (e) => {
     UI.clearFields2();
   }
   e.preventDefault();
+});
+
+function clearStore() {
+  UI.clearUI();
+}
+
+// PopoverApi tooltip
+const popovers = document.querySelectorAll(
+  "[popovertarget][data-trigger='hover']"
+);
+popovers.forEach((el) => {
+  const target = document.getElementById(el.getAttribute("popovertarget"));
+
+  el.addEventListener("mouseover", () => target.showPopover());
+  el.addEventListener("mouseout", () => target.hidePopover());
 });

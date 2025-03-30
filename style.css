@@ -13,10 +13,17 @@
   html,
   body {
     margin: unset;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    font-family: "Copperplate", "Lucida Sans Regular", "Lucida Grande",
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     background-color: #f3f4f6;
     color: var(--font-color);
+  }
+  button {
+    border-radius: 5px;
+    transition: border 0.3s ease;
+    &:hover {
+      border: var(--outline);
+    }
   }
   .header {
     text-align: center;
@@ -119,6 +126,28 @@
   }
   .diffs {
     margin: 0 1rem;
+  }
+
+  #tooltip-content {
+    border: 2px solid #66bb6a;
+    max-width: 95%;
+    opacity: 0;
+    transition:
+      display 1s,
+      opacity 1s;
+    transition-behavior: allow-discrete;
+
+    &:popover-open {
+      display: flex;
+      opacity: 1;
+      @starting-style {
+        opacity: 0;
+      }
+      &::backdrop {
+        background: linear-gradient(45deg, green, blue);
+        opacity: 0.4;
+      }
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
