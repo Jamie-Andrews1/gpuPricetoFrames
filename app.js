@@ -25,7 +25,7 @@ class UI {
       <h4>${gpu.name}</h4>
       <p>Fps: ${gpu.fps}</p>
       <p>Cost: £${gpu.cost}</p>
-      <h4>Frames Per GBPound</h4>
+      <h4>GBPounds Per Frame</h4>
       <p>${fpp.toFixed(2)}</p>
     `;
     res1.appendChild(el);
