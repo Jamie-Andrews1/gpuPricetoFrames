@@ -176,6 +176,15 @@ document.querySelector("#price2").addEventListener("submit", (e) => {
 
 function clearStore() {
   UI.clearUI();
+  UI.clearFields1();
+  UI.clearFields2();
+}
+
+const popAnchor = document.getElementById("tip-anchor");
+if (!window.matchMedia("(pointer: coarse)").matches) {
+  popAnchor.setAttribute("data-trigger", "hover");
+} else {
+  popAnchor.setAttribute("data-trigger", "manual");
 }
 
 // PopoverApi tooltip
