@@ -2,7 +2,7 @@
 
 A vanilla JavaScript web application that helps PC builders compare the value proposition of two graphics cards. It calculates the **Price-per-Frame (PPF)** and provides a percentage breakdown of performance vs. cost differences.
 
-![Image of the GPU Comparator](/img/screenshot-2026-04-29_19-48-28.png|width:600)
+<img src="img/screenshot-2026-04-29_19-48-28.png" width="600">
 
 ## 🚀 Key Features
 
